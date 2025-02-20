@@ -18,7 +18,14 @@
     top: 0;
     left: 20px;
     z-index: 9999;
-  }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.poster-container:hover {
+    transform: perspective(600px) rotateY(10deg) scale(1.1);
+    box-shadow: 5px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
   
   .poster {
     width: 100%;
@@ -27,7 +34,8 @@
   }
   
   .ticket-container {
-    background: #fff;
+    background-color: rgba(224, 207, 207, 0.173); 
+    backdrop-filter: blur(10px);
     width: 270px;
     height: 42rem;
     display: flex;
