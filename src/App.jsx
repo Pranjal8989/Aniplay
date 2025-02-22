@@ -9,6 +9,7 @@ import { AppLayout } from "./components/layout/AppLayout";
 import { MovieCardLoader } from "./components/layout/Loading";
 import { MovieDetails } from "./components/UI/MovieDetails";
 import { getAnimeDetails } from "./Api/GetAPIServices";
+import { Search } from "./pages/Search";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -39,6 +40,10 @@ const App = () => {
           path: "/contact",
           element: <Contact />,
           // action: contactData,
+        },
+        {
+          path: "/searchmovies",
+          element: <Search />,
         },
       ],
     },

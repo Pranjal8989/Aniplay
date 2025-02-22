@@ -1,0 +1,45 @@
+
+ [
+      {
+        "id" : "1",
+        "title": "Inception",
+        "banner": "https://tse1.mm.bing.net/th?id=OIP.k9Ptj-PUUTkfYTXLIOG2ygHaKz&pid=Api",
+        "description": "A skilled thief is given a chance at redemption if he can successfully perform inception.",
+        "release_date": "2010-07-16",
+        "rating": 8.8,
+        "genre": ["Sci-Fi", "Thriller"],
+        "duration": "148 min"
+      },
+      {
+        "id" : "2",
+        "title": "The Dark Knight",
+        "banner": "https://tse4.mm.bing.net/th?id=OIP.NN9rKH-vZbFgtH4FuoW7OwHaLH&pid=Api",
+        "description": "Batman faces off against the Joker, a criminal mastermind who seeks to create chaos in Gotham City.",
+        "release_date": "2008-07-18",
+        "rating": 9.0,
+        "genre": ["Action", "Crime", "Drama"],
+        "duration": "152 min"
+      },
+      {
+        "id" : "3",
+        "title": "Interstellar",
+        "banner": "https://tse1.mm.bing.net/th?id=OIP.kkkHn-L3fTWCYUGoY_n08QHaKX&pid=Api",
+        "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+        "release_date": "2014-11-07",
+        "rating": 8.6,
+        "genre": ["Sci-Fi", "Drama", "Adventure"],
+        "duration": "169 min"
+      },
+      {
+        "id" : "4",
+        "title": "The Matrix",
+        "banner": "https://tse1.mm.bing.net/th?id=OIP.kkkHn-L3fTWCYUGoY_n08QHaKX&pid=Api",
+        "description": "A hacker discovers the shocking truth about reality and his role in the war against its controllers.",
+        "release_date": "1999-03-31",
+        "rating": 8.7,
+        "genre": ["Action", "Sci-Fi"],
+        "duration": "136 min"
+      }
+    ]
+
+  

@@ -14,7 +14,7 @@ export const Header = () => {
   const handleSearch = (event) => {
     setSearch(event.target.value);
     // When search term changes, navigate to the /movie route with search query
-    navigate(`/movie?search=${event.target.value}`);
+    navigate(`/searchmovies?search=${event.target.value}`);
   };
 
   return (

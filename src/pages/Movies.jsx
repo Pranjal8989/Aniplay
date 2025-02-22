@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { getMovies } from "../Api/GetAPIServices"; // Assuming getMoviesdata is your API call function
 import { Card } from "../components/UI/Card";
 
