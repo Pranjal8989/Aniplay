@@ -28,7 +28,7 @@ export const MovieDetailsLoader = () => {
           <div className="movie__content">
             <div className="movie__title">
               <h1 className="heading__primary">
-                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4"></div>
+                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4 "></div>
               </h1>
               <div className=" flex flex-row gap-8">
                 <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-40 mb-4"></div>
