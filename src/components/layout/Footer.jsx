@@ -1,58 +1,63 @@
+import { MdEmail } from "react-icons/md";
+
 export const Footer = () => {
   return (
     <footer className="section-footer">
       <div className="footer-container container">
         <div className="content_1">
-          <img src="./images/logo.png" alt="Movizo" />
+          <img src="./images/logo.png" alt="MovieMania" />
 
           <p>
-            Welcome to Thapa EcomStore, <br />
+            Welcome to MovieMania, <br />
             your ultimate destination for
             <br />
-            cutting-edge gadgets!
+            the latest movies, reviews & trailers!
           </p>
           <img src="https://i.postimg.cc/Nj9dgJ98/cards.png" alt="cards" />
         </div>
+
         <div className="content_2">
-          <h4>SHOPPING</h4>
-          <a href="#">Computer Store</a>
-          <a href="#">Laptop Store</a>
-          <a href="#">Accessories</a>
-          <a href="#">Sales & Discount</a>
+          <h4>MOVIE CATEGORIES</h4>
+          <a href="#">Action</a>
+          <a href="#">Comedy</a>
+          <a href="#">Horror</a>
+          <a href="#">Romantic</a>
         </div>
+
         <div className="content_3">
-          <h4>Experience</h4>
-          <a href="./contact.html">Contact Us</a>
-          <a href="" target="_blank">
-            {" "}
-            Payment Method{" "}
-          </a>
-          <a href="" target="_blank">
-            {" "}
-            Delivery{" "}
-          </a>
-          <a href="" target="_blank">
-            {" "}
-            Return and Exchange{" "}
-          </a>
+          <h4>QUICK LINKS</h4>
+          <a href="#">Latest Movies</a>
+          <a href="#">Top Rated</a>
+          <a href="#">Upcoming Releases</a>
+          <a href="#">Movie Reviews</a>
         </div>
+
+        <div className="content_3">
+          <h4>SUPPORT</h4>
+          <a href="#">Contact Us</a>
+          <a href="#">FAQ</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </div>
+
         <div className="content_4">
           <h4>NEWSLETTER</h4>
           <p>
-            Be the first to know about new
+            Subscribe to get updates on new
             <br />
-            arrivals, sales & promos!
+            movie releases & exclusive content!
           </p>
           <div className="f-mail">
+            <MdEmail size={35} />
             <input type="email" placeholder="Your Email" />
-            <i className="bx bx-envelope"></i>
           </div>
           <hr />
         </div>
       </div>
+
       <div className="f-design">
         <div className="f-design-txt">
-          <p>Design and Code by Thapa Technical</p>
+          <p>Designed & Developed by Pranjal Pandit</p>
         </div>
       </div>
     </footer>

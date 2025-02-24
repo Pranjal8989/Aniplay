@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 export const Header = () => {
   const [search, setSearch] = useState("");
-  const navigate = useNavigate(); // To navigate to the movie page with search query
-
+  const navigate = useNavigate();
+  const location = useLocation(); //geting current route location
   const [isActive, setIsActive] = useState(false);
   const onHandleToggle = () => {
     setIsActive(!isActive);
@@ -13,9 +13,15 @@ export const Header = () => {
 
   const handleSearch = (event) => {
     setSearch(event.target.value);
-    // When search term changes, navigate to the /movie route with search query
+
     navigate(`/searchmovies?search=${event.target.value}`);
   };
+
+  useEffect(() => {
+    if (!location.pathname.startsWith("/searchmovies")) {
+      setIsActive(false);
+    }
+  }, [location.pathname]);
 
   return (
     <header className="section-navbar">

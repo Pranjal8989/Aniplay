@@ -1,30 +1,29 @@
 import { useEffect, useState } from "react";
-// import { useLocation } from "react-router-dom";
-import { getMovies } from "../Api/GetAPIServices"; // Assuming getMoviesdata is your API call function
+import { getMovies } from "../Api/GetAPIServices";
 import { Card } from "../components/UI/Card";
+import { MovieCardLoader } from "../components/layout/Loading";
 
 export const Movies = () => {
   const [movies, setMovies] = useState([]);
-
-  // const location = useLocation(); // Get the current location (URL)
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // const queryParams = new URLSearchParams(location.search); // Get query parameters from URL
-    // const searchQuery = queryParams.get("search");
-
     const fetchMovies = async () => {
       const data = await getMovies();
-      console.log(data.Search);
+      console.log(data);
       // Fetch data based on search query
-      if (data && data.Search) {
-        setMovies(data.Search); // Set the fetched movies to state
+      if (data && data) {
+        setMovies(data);
       } else {
-        setMovies([]); // Clear if no results are found
+        setMovies([]);
       }
+      setLoading(false);
     };
 
-    fetchMovies(); // Always fetch data when the component mounts or search changes
-  }, []); // Dependency array ensures this effect runs whenever the search query changes
+    fetchMovies();
+  }, []);
+
+  if (loading) return <MovieCardLoader />;
 
   return (
     <div className="container">

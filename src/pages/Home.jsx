@@ -2,13 +2,21 @@ import { useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import movies from "../Api/Movies.json";
 import { Card } from "../components/UI/Card";
-import { getMovies } from "../Api/GetAPIServices";
+import { getAnime, getMovies, getTVSerial } from "../Api/GetAPIServices";
 import { HiArrowSmLeft, HiArrowSmRight } from "react-icons/hi";
+import { HomeCardLoader } from "../components/layout/Loading";
 
 export const Home = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [topmovies, setMovies] = useState([]);
-  const scrollRef = useRef(null);
+  const [topmovies, setTopMovies] = useState([]);
+  const [topTVSerial, setTopTvSerial] = useState([]);
+  const [topAnime, setTopAnime] = useState([]);
+  const [loadingMovies, setLoadingMovies] = useState(true);
+  const [loadingTVSerial, setLoadingTVSerial] = useState(true);
+  const [loadingAnime, setLoadingAnime] = useState(true);
+  const scrollRef1 = useRef(null);
+  const scrollRef2 = useRef(null);
+  const scrollRef3 = useRef(null);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
@@ -18,28 +26,37 @@ export const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const fetchMovies = async () => {
+    setLoadingMovies(true);
+    const data = await getMovies();
+    setTopMovies(data || []);
+    setLoadingMovies(false);
+  };
+
+  const fetchTVSerial = async () => {
+    setLoadingTVSerial(true);
+    const data = await getTVSerial();
+    setTopTvSerial(data || []);
+    setLoadingTVSerial(false);
+  };
+
+  const fetchAnime = async () => {
+    setLoadingAnime(true);
+    const data = await getAnime();
+    setTopAnime(data || []);
+    setLoadingAnime(false);
+  };
+
   useEffect(() => {
-    const fetchMovies = async () => {
-      const data = await getMovies();
-      console.log(data.Search);
-      if (data && data.Search) {
-        setMovies(data.Search);
-      } else {
-        setMovies([]);
-      }
-    };
-
+    fetchTVSerial();
     fetchMovies();
+    fetchAnime();
   }, []);
-
-  const handleScroll = (direction) => {
-    if (scrollRef.current) {
+  const handleScroll = (direction, ref) => {
+    if (ref.current) {
       const scrollAmount = 300;
-      if (direction === "left") {
-        scrollRef.current.scrollLeft -= scrollAmount;
-      } else {
-        scrollRef.current.scrollLeft += scrollAmount;
-      }
+      ref.current.scrollLeft +=
+        direction === "left" ? -scrollAmount : scrollAmount;
     }
   };
 
@@ -55,7 +72,7 @@ export const Home = () => {
               {movies.map((movie) => (
                 <div key={movie.id} className="slide">
                   <div className=" grid grid-two--cols">
-                    <div className="section-hero--content">
+                    <div className="section-hero--content ">
                       <p className="hero-subheading">
                         Explore the Latest in Movie Industries
                       </p>
@@ -83,55 +100,92 @@ export const Home = () => {
             </div>
           </section>
         </div>
+
+        <h2 className="hero-heading">Top Movies</h2>
+        <div className="hero-container">
+          <button
+            className="scroll-btn left"
+            onClick={() => handleScroll("left", scrollRef1)}
+          >
+            <HiArrowSmLeft />
+          </button>
+
+          <div className="movies-wrapper" ref={scrollRef1}>
+            <ul className="movie-list">
+              {loadingMovies ? (
+                <HomeCardLoader />
+              ) : (
+                topmovies.map((curMovie) => (
+                  <Card key={curMovie.imdbID} curMovie={curMovie} />
+                ))
+              )}
+            </ul>
+          </div>
+
+          <button
+            className="scroll-btn right"
+            onClick={() => handleScroll("right", scrollRef1)}
+          >
+            <HiArrowSmRight />
+          </button>
+        </div>
+        <h2 className="hero-heading">Top TV serial</h2>
+        <div className="hero-container">
+          <button
+            className="scroll-btn left"
+            onClick={() => handleScroll("left", scrollRef2)}
+          >
+            <HiArrowSmLeft />
+          </button>
+
+          <div className="movies-wrapper" ref={scrollRef2}>
+            <ul className="movie-list">
+              {loadingTVSerial ? (
+                <HomeCardLoader />
+              ) : (
+                topTVSerial.map((curTVserial) => (
+                  <Card key={curTVserial.imdbID} curMovie={curTVserial} />
+                ))
+              )}
+            </ul>
+          </div>
+
+          <button
+            className="scroll-btn right"
+            onClick={() => handleScroll("right", scrollRef2)}
+          >
+            <HiArrowSmRight />
+          </button>
+        </div>
+        <h2 className="hero-heading">Top Anime</h2>
+        <div className="hero-container">
+          <button
+            className="scroll-btn left"
+            onClick={() => handleScroll("left", scrollRef3)}
+          >
+            <HiArrowSmLeft />
+          </button>
+
+          <div className="movies-wrapper" ref={scrollRef3}>
+            <ul className="movie-list">
+              {loadingAnime ? (
+                <HomeCardLoader />
+              ) : (
+                topAnime.map((curAnime) => (
+                  <Card key={curAnime.imdbID} curMovie={curAnime} />
+                ))
+              )}
+            </ul>
+          </div>
+
+          <button
+            className="scroll-btn right"
+            onClick={() => handleScroll("right", scrollRef3)}
+          >
+            <HiArrowSmRight />
+          </button>
+        </div>
       </main>
-      <h2 className="hero-heading">Top Movies</h2>
-      <div className="hero-container">
-        <button
-          className="scroll-btn left"
-          onClick={() => handleScroll("left")}
-        >
-          <HiArrowSmLeft />
-        </button>
-
-        <div className="movies-wrapper" ref={scrollRef}>
-          <ul className="movie-list">
-            {topmovies.map((curMovie) => (
-              <Card key={curMovie.imdbID} curMovie={curMovie} />
-            ))}
-          </ul>
-        </div>
-
-        <button
-          className="scroll-btn right"
-          onClick={() => handleScroll("right")}
-        >
-          <HiArrowSmRight />
-        </button>
-      </div>
-      <h2 className="hero-heading">Top Movies</h2>
-      <div className="hero-container">
-        <button
-          className="scroll-btn left"
-          onClick={() => handleScroll("left")}
-        >
-          <HiArrowSmLeft />
-        </button>
-
-        <div className="movies-wrapper" ref={scrollRef}>
-          <ul className="movie-list">
-            {topmovies.map((curMovie) => (
-              <Card key={curMovie.imdbID} curMovie={curMovie} />
-            ))}
-          </ul>
-        </div>
-
-        <button
-          className="scroll-btn right"
-          onClick={() => handleScroll("right")}
-        >
-          <HiArrowSmRight />
-        </button>
-      </div>
     </>
   );
 };

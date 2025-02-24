@@ -29,16 +29,6 @@
         "rating": 8.6,
         "genre": ["Sci-Fi", "Drama", "Adventure"],
         "duration": "169 min"
-      },
-      {
-        "id" : "4",
-        "title": "The Matrix",
-        "banner": "https://tse1.mm.bing.net/th?id=OIP.kkkHn-L3fTWCYUGoY_n08QHaKX&pid=Api",
-        "description": "A hacker discovers the shocking truth about reality and his role in the war against its controllers.",
-        "release_date": "1999-03-31",
-        "rating": 8.7,
-        "genre": ["Action", "Sci-Fi"],
-        "duration": "136 min"
       }
     ]
 

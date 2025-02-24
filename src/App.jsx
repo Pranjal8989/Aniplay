@@ -6,10 +6,10 @@ import { Movies } from "./pages/Movies";
 import { Home } from "./pages/Home";
 import { ErrorPage } from "./pages/ErrorPage";
 import { AppLayout } from "./components/layout/AppLayout";
-import { MovieCardLoader } from "./components/layout/Loading";
 import { MovieDetails } from "./components/UI/MovieDetails";
-import { getAnimeDetails } from "./Api/GetAPIServices";
+import { getMoviesDetails } from "./Api/GetAPIServices";
 import { Search } from "./pages/Search";
+import { About } from "./pages/About";
 
 const App = () => {
   const router = createBrowserRouter([
@@ -24,7 +24,7 @@ const App = () => {
         },
         {
           path: "/about",
-          element: <MovieCardLoader />,
+          element: <About />,
         },
         {
           path: "/movie",
@@ -34,7 +34,7 @@ const App = () => {
         {
           path: "/movie/:movieID", // : use for dynamic url or route
           element: <MovieDetails />,
-          loader: getAnimeDetails,
+          loader: getMoviesDetails,
         },
         {
           path: "/contact",
