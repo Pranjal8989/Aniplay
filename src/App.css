@@ -244,8 +244,24 @@
       width: 100%;
       box-shadow: rgba(255, 252, 252, 0.25) 0px 14px 28px;
       z-index: 1;
+      transition: left 0.4s ease-in-out; 
     }
-  
+    /* sidebar */
+    /* .menu-mobile {
+      position: fixed;
+      top: 0;
+      right: 72%;
+      width: 100%;
+      max-width: 33rem;
+      height: 100vh;
+      background-color: #181829;
+      box-shadow: rgba(255, 252, 252, 0.25) 0px 14px 28px;
+      z-index: 1000;
+      transition: left 0.4s ease-in-out; 
+      display: flex;
+      flex-direction: column;
+      padding-top: 60px;
+    }  */
     .menu-mobile ul {
       display: flex;
       flex-direction: column;
