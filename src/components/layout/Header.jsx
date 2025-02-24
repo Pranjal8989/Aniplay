@@ -27,7 +27,10 @@ export const Header = () => {
     <header className="section-navbar">
       <section className="top_txt">
         <div className="head container">
-          <NavLink to="/">Movizo</NavLink>
+          <NavLink to="/">
+            {" "}
+            <img src="./logo/movizologo.png" alt="MovieMania" />
+          </NavLink>
 
           <nav className={`navbar ${isActive ? "menu-mobile" : "menu-web"}`}>
             <ul>

@@ -28,19 +28,19 @@ export const MovieDetailsLoader = () => {
           <div className="movie__content">
             <div className="movie__title">
               <h1 className="heading__primary">
-                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4 "></div>
+                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 sm:w-40 mb-4 "></div>
               </h1>
-              <div className=" flex flex-row gap-8">
-                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-40 mb-4"></div>
-                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-40 mb-4"></div>
+              <div className="flex flex-row gap-8">
+                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-40 sm:w-32 mb-4"></div>
+                <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-40 sm:w-32 mb-4"></div>
               </div>
             </div>
 
-            <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-80 mb-4 mt-10"></div>
+            <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-80 sm:w-52 mb-4 mt-10"></div>
             <div className="movie__details">
-              <p className="movie__detail h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4"></p>
-              <p className="movie__detail h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4"></p>
-              <p className="movie__detail h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 mb-4"></p>
+              <p className="movie__detail h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 sm:w-40 mb-4"></p>
+              <p className="movie__detail h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 sm:w-40 mb-4"></p>
+              <p className="movie__detail h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-60 sm:w-40 mb-4"></p>
             </div>
 
             <div className="h-10 bg-gray-200 rounded-full dark:bg-gray-700 w-full mb-4"></div>

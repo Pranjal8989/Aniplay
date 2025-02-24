@@ -5,7 +5,7 @@ export const Footer = () => {
     <footer className="section-footer">
       <div className="footer-container container">
         <div className="content_1">
-          <img src="./images/logo.png" alt="MovieMania" />
+          <img src="./logo/movizologo.png" alt="MovieMania" />
 
           <p>
             Welcome to MovieMania, <br />
